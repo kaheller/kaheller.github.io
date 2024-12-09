@@ -1,0 +1,127 @@
+/* General styles for the entire page */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('img/background.png');
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+}
+
+@font-face {
+    font-family: "Lovelo";
+    src: url('font/Lovelo/Lovelo/Commercial/OTF/Lovelo-Black.otf');
+}
+
+@font-face {
+    font-family: "Lovelo-Bold";
+    src: url('font/Lovelo/Lovelo/Commercial/OTF/Lovelo-LineBold.otf');
+}
+
+/* Styling for the body */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: "Lovelo", sans-serif;
+    overflow-x: hidden;
+    color: #9b1515;
+}
+
+/* Heading styles */
+h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 60px;
+}
+
+/* Paragraph styles */
+p {
+    font-family: "Lovelo-Bold", sans-serif;
+    font-style: italic;
+    text-align: center; /* Center the text */
+    margin: 0 auto; /* Centers the paragraph */
+    max-width: 80%; /* Limits text width */
+    line-height: 1.5; /* Improves readability */
+}
+
+/* Container for images */
+.images-container {
+    display: flex; /* Align images in a row */
+    justify-content: center; /* Center the images horizontally */
+    gap: 20px; /* Space between the images */
+    padding: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Image styles */
+img {
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border: 2px solid #694d4d;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Tilted and curved effect for images */
+img:nth-child(1) { 
+    margin-top: -30px; /* Raise the first image */
+    transform: rotate(-8deg); /* Tilt first image to the left */
+}
+
+img:nth-child(2) {
+    margin-top: 30px; /* Lower the second image */
+    transform: rotate(5deg); /* Tilt second image to the right */
+}
+
+img:nth-child(3) {
+    margin-top: 30px; /* Lower the third image */
+    transform: rotate(-3deg); /* Tilt third image slightly to the left */
+}
+
+img:nth-child(4) {
+    margin-top: -30px; /* Raise the fourth image */
+    transform: rotate(7deg); /* Tilt fourth image to the right */
+}
+
+/* Hover effect for all images */
+img:hover {
+    transform: scale(1.1) rotate(0deg); /* Reset tilt and scale up */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Media query for smaller screens (600px or less) */
+@media (max-width: 600px) {
+    .images-container {
+        flex-wrap: wrap; /* Allow images to wrap */
+        gap: 10px; /* Reduce spacing for smaller screens */
+    }
+
+    img {
+        width: 200px; /* Smaller images on small screens */
+        margin-top: 0; /* Reset vertical positions for simpler stacking */
+        transform: rotate(0deg); /* Remove rotation */
+    }
+}
+
+/* Media query for very small screens (400px or less) */
+@media (max-width: 400px) {
+    .images-container {
+        flex-direction: column; /* Stack images vertically */
+        gap: 10px;
+    }
+
+    img {
+        width: 150px; /* Even smaller images */
+        margin-top: 0; /* Reset positions */
+        transform: rotate(0deg); /* Remove rotation */
+    }
+}
+
+
