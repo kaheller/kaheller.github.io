@@ -112,7 +112,7 @@ img:hover {
 /* Media query for very small screens (400px or less) */
 @media (max-width: 400px) {
     .images-container {
-        flex-direction: column; /* Stack images vertically */
+        flex-direction: column; 
         gap: 10px;
     }
 
