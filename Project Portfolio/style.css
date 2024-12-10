@@ -1,11 +1,14 @@
+/* General styles for the entire page */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    overflow-x: hidden;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
                 url('img/background.png');
     background-size: cover;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center;
 }
 
@@ -26,8 +29,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     font-family: "Lovelo", sans-serif;
-    overflow-x: hidden;
-    color: #9b1515;
+    color: #e3b9b9;
 }
 
 /* Heading styles */
@@ -42,7 +44,7 @@ p {
     font-family: "Lovelo-Bold", sans-serif;
     font-style: italic;
     text-align: center; /* Center the text */
-    margin: 0 auto; /* Centers the paragraph */
+    margin: 0 auto 40px; /* Centers the paragraph */
     max-width: 80%; /* Limits text width */
     line-height: 1.5; /* Improves readability */
 }
@@ -52,7 +54,7 @@ p {
     display: flex; /* Align images in a row */
     justify-content: center; /* Center the images horizontally */
     gap: 20px; /* Space between the images */
-    padding: 20px;
+    padding: 30px;
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -62,9 +64,8 @@ img {
     max-width: 100%;
     width: 300px;
     height: auto;
-    border: 2px solid #694d4d;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    box-shadow: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -95,6 +96,22 @@ img:hover {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Style for the new right-side image */
+.right-image {
+    position: absolute; /* Position it relative to the main container */
+    right: 20px; /* Distance from the right edge */
+    margin-top: 40px; /* Adds spacing below the fourth picture */
+    width: 200px; /* Set a specific width */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.9; /* Slight transparency for a clean look */
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+/* Make sure the parent container is positioned properly */
+.main-container {
+    position: relative; /* Allows absolute positioning within the container */
+}
+
 /* Media query for smaller screens (600px or less) */
 @media (max-width: 600px) {
     .images-container {
@@ -107,12 +124,19 @@ img:hover {
         margin-top: 0; /* Reset vertical positions for simpler stacking */
         transform: rotate(0deg); /* Remove rotation */
     }
+
+    .right-image {
+        position: static; /* Reset positioning */
+        margin: 20px auto; /* Center the image */
+        display: block; /* Block display for centering */
+        width: 150px; /* Smaller image */
+    }
 }
 
 /* Media query for very small screens (400px or less) */
 @media (max-width: 400px) {
     .images-container {
-        flex-direction: column; 
+        flex-direction: column; /* Stack images vertically */
         gap: 10px;
     }
 
@@ -121,7 +145,10 @@ img:hover {
         margin-top: 0; /* Reset positions */
         transform: rotate(0deg); /* Remove rotation */
     }
-}
 
+    .right-image {
+        width: 120px; /* Reduce size further for small screens */
+    }
+}
 
 
