@@ -4,11 +4,8 @@ html, body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    background-image: url(img/background.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    background-color: rgb(239, 225, 208);
+
 }
 
 @font-face {
@@ -33,7 +30,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     font-family: "Lovelo", sans-serif;
-    color: #000dc2;
+    color: #000000;
 }
 
 /* Heading styles */
@@ -46,6 +43,7 @@ h1 {
 /* Paragraph styles */
 p {
     font-family: "Stencil", sans-serif;
+    font-size: larger;
     font-style: italic;
     text-align: center; /* Center the text */
     margin: 0 auto 40px; /* Centers the paragraph */
@@ -137,7 +135,7 @@ img:hover {
         transform: translateX(-5px) translateY(-7px) rotate(-5deg); 
     }
     100% {
-        transform: translateX(0) translateY(0) rotate(-5deg);
+        transform: translateX(0) translateY(-2px) rotate(-5deg);
     }
 }
 
