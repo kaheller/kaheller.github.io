@@ -4,8 +4,7 @@ html, body {
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('img/background.png');
+    background-image: url(img/background.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,6 +14,11 @@ html, body {
 @font-face {
     font-family: "Lovelo";
     src: url('font/Lovelo/Lovelo/Commercial/OTF/Lovelo-Black.otf');
+}
+
+@font-face {
+    font-family: Stencil;
+    src: url('font/stencilum/Stencilum-Regular.ttf');
 }
 
 @font-face {
@@ -29,7 +33,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     font-family: "Lovelo", sans-serif;
-    color: #e3b9b9;
+    color: #000dc2;
 }
 
 /* Heading styles */
@@ -41,7 +45,7 @@ h1 {
 
 /* Paragraph styles */
 p {
-    font-family: "Lovelo-Bold", sans-serif;
+    font-family: "Stencil", sans-serif;
     font-style: italic;
     text-align: center; /* Center the text */
     margin: 0 auto 40px; /* Centers the paragraph */
@@ -49,14 +53,17 @@ p {
     line-height: 1.5; /* Improves readability */
 }
 
+
+
 /* Container for images */
 .images-container {
-    display: flex; /* Align images in a row */
+    display: flex; 
     justify-content: center; /* Center the images horizontally */
-    gap: 20px; /* Space between the images */
+    gap: 20px; 
     padding: 30px;
     max-width: 100%;
     box-sizing: border-box;
+    position: relative;
 }
 
 /* Image styles */
@@ -67,6 +74,14 @@ img {
     border-radius: 0;
     box-shadow: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+img:nth-child(1),
+img:nth-child(2),
+img:nth-child(3),
+img:nth-child(4) {
+    z-index: 2;
 }
 
 /* Tilted and curved effect for images */
@@ -93,18 +108,37 @@ img:nth-child(4) {
 /* Hover effect for all images */
 img:hover {
     transform: scale(1.1) rotate(0deg); /* Reset tilt and scale up */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Style for the new right-side image */
-.right-image {
+
+.chibi {
     position: absolute; /* Position it relative to the main container */
-    right: 20px; /* Distance from the right edge */
-    margin-top: 40px; /* Adds spacing below the fourth picture */
+    left: 40px; /* Distance from the right edge */
+    margin-top: 20px; /* Adds spacing below the fourth picture */
+    bottom: 5px;
     width: 200px; /* Set a specific width */
     height: auto; /* Maintain aspect ratio */
-    opacity: 0.9; /* Slight transparency for a clean look */
-    z-index: 10; /* Ensure it stays above other elements */
+    z-index: 1; 
+
+    animation: shake 2s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg); 
+    }
+    25% {
+        transform: translateX(7px) translateY(-5px) rotate(-5deg); 
+    }
+    50% {
+        transform: translateX(7px) translateY(5px) rotate(5deg);
+    }
+    75% {
+        transform: translateX(-5px) translateY(-7px) rotate(-5deg); 
+    }
+    100% {
+        transform: translateX(0) translateY(0) rotate(-5deg);
+    }
 }
 
 /* Make sure the parent container is positioned properly */
