@@ -13,7 +13,10 @@ html, body {
     overflow: hidden; /* Disable scrolling */
     display: flex;
     flex-direction: column;
-    background-image: url('img/backnew.png'); /* Maintain background */
+    background-image: url('img/backnew.png'); 
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: auto;
 }
 
 
@@ -22,6 +25,7 @@ h1 {
     margin: 20px 0;
     text-align: center;
     font-size: 60px;
+    font-family: "Cageroll-Roll", sans-serif;
 }
 
 /* Paragraph styles */
@@ -29,7 +33,7 @@ p {
     font-family: "Gothic-Neutral", sans-serif;
     font-size: larger;
     text-align: center;
-    margin: 0 auto 40px;
+    margin: 0 auto 60px;
     max-width: 80%;
     line-height: 1.5;
 }
@@ -65,7 +69,7 @@ img:nth-child(4) {
 
 
 .tilted-images {
-    margin-top: 20px; /* Minimal space between the `.chibi` and the images */
+    margin-top: 30px; /* Minimal space between the `.chibi` and the images */
     display: flex;
     justify-content: center; /* Center the images horizontally */
     gap: 10px; /* Small gap between images */
@@ -78,26 +82,22 @@ img:nth-child(4) {
 }
 
 
-/* Tilted and curved effect for images */
-.tilted-images img:nth-child(1) { 
-    margin-top: -30px;
-    transform: rotate(-8deg);
+.tilted-images img:nth-child(1) {
+    transform: rotate(-5deg); /* Soft left tilt */
 }
 
 .tilted-images img:nth-child(2) {
-    margin-top: 30px;
-    transform: rotate(5deg);
+    transform: rotate(10deg); /* Bold right tilt */
 }
 
 .tilted-images img:nth-child(3) {
-    margin-top: 30px;
-    transform: rotate(-3deg);
+    transform: rotate(5deg); /* Soft right tilt */
 }
 
 .tilted-images img:nth-child(4) {
-    margin-top: -30px;
-    transform: rotate(7deg);
+    transform: rotate(-10deg); /* Bold left tilt */
 }
+
 
 /* Hover effect for all images */
 .tilted-images img:hover {
@@ -231,6 +231,55 @@ a:hover {
         transition: none;
     }
 }
+
+
+
+/* Container for sliding images */
+.sliding-images {
+    position: relative;
+    overflow: hidden; /* Hide images that move outside the container */
+    width: 100%; /* Full width of the page */
+    height: 200px; /* Adjust to fit image height */
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Images inside the container */
+.sliding-images img {
+    position: absolute;
+    width: 200px; /* Adjust the image size as needed */
+    height: auto; /* Maintain aspect ratio */
+    animation: slide 10s linear infinite; /* Apply sliding animation */
+}
+
+/* Keyframes for sliding animation */
+@keyframes slide {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End off-screen to the left */
+    }
+}
+
+/* Stagger animations for each image */
+.sliding-images img:nth-child(1) {
+    animation-delay: 0s;
+}
+.sliding-images img:nth-child(2) {
+    animation-delay: 2s; /* Adjust delay for a constant stream */
+}
+.sliding-images img:nth-child(3) {
+    animation-delay: 4s;
+}
+.sliding-images img:nth-child(4) {
+    animation-delay: 6s;
+}
+.sliding-images img:nth-child(5) {
+    animation-delay: 8s;
+}
+
 
 
 
