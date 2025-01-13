@@ -1,0 +1,43 @@
+/* fonts.css */
+
+/* Lovelo fonts */
+@font-face {
+    font-family: "Lovelo";
+    src: url('font/Lovelo/Lovelo/Commercial/OTF/Lovelo-Black.otf');
+}
+
+@font-face {
+    font-family: "Lovelo-Bold";
+    src: url('font/Lovelo/Lovelo/Commercial/OTF/Lovelo-LineBold.otf');
+}
+
+/* Stencil font */
+@font-face {
+    font-family: "Stencil";
+    src: url('font/stencilum/Stencilum-Regular.ttf');
+}
+
+/* Cageroll fonts */
+@font-face {
+    font-family: "Cageroll - Standart";
+    src: url('font/Cageroll-Standard.otf');
+}
+
+@font-face {
+    font-family: "Cageroll - Cage";
+    src: url("font/Cageroll-Cage.otf");
+}
+
+@font-face {
+    font-family: "Cageroll - Roll";
+    src: url("font/Cageroll-Roll.otf");
+}
+
+@font-face {
+    font-family: "Gothic-Neutral";
+    src: url("font/Gothic60-Regular.otf"); 
+}
+
+.new-font {
+    font-family: "Gothic-Neutral", sans-serif;
+}

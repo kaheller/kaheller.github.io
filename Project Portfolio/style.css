@@ -2,26 +2,15 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: auto;
+    width: 100%;
     overflow-x: hidden;
-    background-color: rgb(239, 225, 208);
+    background-image: url('img/backnew.png');
+    display: flex;
+    flex-direction: column;
 
 }
 
-@font-face {
-    font-family: "Lovelo";
-    src: url('font/Lovelo/Lovelo/Commercial/OTF/Lovelo-Black.otf');
-}
-
-@font-face {
-    font-family: Stencil;
-    src: url('font/stencilum/Stencilum-Regular.ttf');
-}
-
-@font-face {
-    font-family: "Lovelo-Bold";
-    src: url('font/Lovelo/Lovelo/Commercial/OTF/Lovelo-LineBold.otf');
-}
 
 /* Styling for the body */
 body {
@@ -29,7 +18,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    font-family: "Lovelo", sans-serif;
+    font-family: "Cageroll - Standart", sans-serif;
     color: #000000;
 }
 
@@ -42,9 +31,8 @@ h1 {
 
 /* Paragraph styles */
 p {
-    font-family: "Stencil", sans-serif;
+    font-family: "Gothic-Neutral", sans-serif;
     font-size: larger;
-    font-style: italic;
     text-align: center; /* Center the text */
     margin: 0 auto 40px; /* Centers the paragraph */
     max-width: 80%; /* Limits text width */
@@ -83,28 +71,28 @@ img:nth-child(4) {
 }
 
 /* Tilted and curved effect for images */
-img:nth-child(1) { 
+.tilted-images img:nth-child(1) { 
     margin-top: -30px; /* Raise the first image */
     transform: rotate(-8deg); /* Tilt first image to the left */
 }
 
-img:nth-child(2) {
+.tilted-images img:nth-child(2) {
     margin-top: 30px; /* Lower the second image */
     transform: rotate(5deg); /* Tilt second image to the right */
 }
 
-img:nth-child(3) {
+.tilted-images img:nth-child(3) {
     margin-top: 30px; /* Lower the third image */
     transform: rotate(-3deg); /* Tilt third image slightly to the left */
 }
 
-img:nth-child(4) {
+.tilted-images img:nth-child(4) {
     margin-top: -30px; /* Raise the fourth image */
     transform: rotate(7deg); /* Tilt fourth image to the right */
 }
 
 /* Hover effect for all images */
-img:hover {
+.tilted-images img:hover {
     transform: scale(1.1) rotate(0deg); /* Reset tilt and scale up */
 }
 
@@ -126,7 +114,7 @@ img:hover {
         transform: translateX(0) translateY(0) rotate(0deg); 
     }
     25% {
-        transform: translateX(7px) translateY(-5px) rotate(-5deg); 
+        transform: translateX(7px) translateY(0px) rotate(-5deg); 
     }
     50% {
         transform: translateX(7px) translateY(5px) rotate(5deg);
@@ -135,13 +123,14 @@ img:hover {
         transform: translateX(-5px) translateY(-7px) rotate(-5deg); 
     }
     100% {
-        transform: translateX(0) translateY(-2px) rotate(-5deg);
+        transform: translateX(0) translateY(0) rotate(0);
     }
 }
 
 /* Make sure the parent container is positioned properly */
 .main-container {
-    position: relative; /* Allows absolute positioning within the container */
+    position: relative; 
+    flex: 1;
 }
 
 /* Media query for smaller screens (600px or less) */
@@ -182,5 +171,34 @@ img:hover {
         width: 120px; /* Reduce size further for small screens */
     }
 }
+
+/* Footer styles */
+.site-footer {
+    background-color: black; 
+    color: white; 
+    padding: 10px 20px; /* Padding for spacing */
+    width: 100%; /* Full-width footer */
+    text-align: left; /* Align text to the left */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    font-family: "Cageroll - Cage", sans-serif; 
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 100;
+    bottom: 0;
+}
+
+.site-footer p {
+    margin: 0; 
+    font-size: 14px; /* Set text size */
+}
+
+@media (max-width: 600px) {
+    .site-footer {
+        font-size: 12px; /* Reduce font size on small screens */
+        padding: 8px 15px; /* Adjust padding for small screens */
+    }
+}
+
 
 
