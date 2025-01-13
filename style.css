@@ -101,7 +101,7 @@ img:nth-child(4) {
     position: absolute; /* Position it relative to the main container */
     left: 40px; /* Distance from the right edge */
     margin-top: 20px; /* Adds spacing below the fourth picture */
-    bottom: 5px;
+    margin: 5px;
     width: 200px; /* Set a specific width */
     height: auto; /* Maintain aspect ratio */
     z-index: 1; 
@@ -127,7 +127,6 @@ img:nth-child(4) {
     }
 }
 
-/* Make sure the parent container is positioned properly */
 .main-container {
     position: relative; 
     flex: 1;
@@ -179,7 +178,7 @@ img:nth-child(4) {
     padding: 10px 20px; /* Padding for spacing */
     width: 100%; /* Full-width footer */
     text-align: left; /* Align text to the left */
-    box-sizing: border-box; /* Includes padding in width calculation */
+    box-sizing: border-box; 
     font-family: "Cageroll - Cage", sans-serif; 
     position: fixed;
     box-sizing: border-box;
