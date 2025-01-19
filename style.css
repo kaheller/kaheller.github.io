@@ -116,6 +116,17 @@ img:nth-child(4) {
     animation: shake 2s ease-in-out infinite; /* Keep the shake animation */
 }
 
+@media (max-width: 600px) {
+    .chibi {
+        position: static; /* Remove absolute positioning */
+        margin: 20px auto; /* Center at the bottom */
+        display: block;
+        width: 100px; /* Adjust size for smaller screens */
+        height: auto;
+    
+    }
+}
+
 
 @keyframes shake {
     0% {
