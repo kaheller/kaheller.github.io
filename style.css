@@ -13,7 +13,7 @@ html, body {
     overflow: hidden; /* Disable scrolling */
     display: flex;
     flex-direction: column;
-    background-image: url('img/backnew.png'); 
+    background-image: url('img/background.png') ;
     background-repeat: no-repeat;
     background-position: top left;
     background-size: cover;
@@ -24,18 +24,20 @@ html, body {
 h1 {
     margin: 20px 0;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     font-family: "Cageroll-Roll", sans-serif;
+    color: rgb(0, 0, 0);
 }
 
 /* Paragraph styles */
 p {
-    font-family: "Gothic-Neutral", sans-serif;
+    font-family: "Cageroll-Cage", sans-serif;
     font-size: larger;
     text-align: center;
     margin: 0 auto 60px;
     max-width: 80%;
     line-height: 1.5;
+    
 }
 
 /* Container for images */
